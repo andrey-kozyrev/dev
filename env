@@ -1,6 +1,3 @@
-#!/bin/bash
-
-export USR_ROOT=$HOME/usr
 
 export GOROOT=$USR_ROOT/lib/go
 export GOPATH=$USR_ROOT/src/go
