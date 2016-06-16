@@ -3,16 +3,16 @@
 
 VER=0.13.11
 
-pushd $USR_ROOT/opt
+pushd $USR/opt
 
 wget  https://dl.bintray.com/sbt/native-packages/sbt/$VER/sbt-$VER.tgz
 tar -xf sbt*
 rm *.tgz
 
-cd $USR_ROOT/lib
+cd $USR/lib
 ln -s ../opt/`ls ../opt | grep sbt` sbt
 
-cd $USR_ROOT/bin
+cd $USR/bin
 ln -s ../lib/sbt/bin/sbt sbt
 
 popd

@@ -1,18 +1,18 @@
 #!/bin/bash
 
-USR_ROOT=$1
+DEV=${1:-`pwd`}
+echo "DEV = $DEV"
 
-export USR_ROOT=${USR_ROOT:-`pwd`/usr}
+USR=$DEV/usr
 
-mkdir -p $USR_ROOT/src $USR_ROOT/opt $USR_ROOT/lib $USR_ROOT/bin
+mkdir -p $USR/src $USR/opt $USR/lib $USR/bin
 
-if [ -f $USR_ROOT/.env ]
+if [ ! -f $USR/.env ]
   then
-    rm $USR_ROOT/.env
+    echo "#!/bin/bash" >> $USR/.env
+    echo "export USR=$USR" >> $USR/.env
+    echo 'export PATH=$PATH:$USR/bin' >> $USR/.env
+    echo "export BEEP=/usr/share/sounds/KDE-K3B-Finish-Success.ogg" >> $USR/.env
 fi
-
-echo "#!/bin/bash" >> $USR_ROOT/.env
-echo "export USR_ROOT=$USR_ROOT" >> $USR_ROOT/.env
-cat env	>> $USR_ROOT/.env
 
 

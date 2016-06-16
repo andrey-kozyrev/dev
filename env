@@ -13,6 +13,9 @@ export MAVEN_OPTS="-Xms2g -Xmx2g"
 
 export GRADLE_HOME=$USR_ROOT/lib/gradle
 
+export CASSANDRA_HOME=$USR_ROOT/lib/cassandra
+export CASSANDRA_INCLUDE=$CASSANDRA_HOME/bin/cassandra.in.sh
+
 export PATH=$PATH:$USR_ROOT/bin
 
 export BEEP=/usr/share/sounds/KDE-K3B-Finish-Success.ogg
