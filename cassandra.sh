@@ -1,7 +1,7 @@
 #!/bin/bash
 . init.sh $1
 
-VER=3.7
+VER=3.5
 
 pushd $USR/opt
 
