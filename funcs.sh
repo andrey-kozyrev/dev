@@ -9,7 +9,7 @@ delete_link() {
 
 fetch_tar() {
   cd $USR/opt
-  rm -rf *$1*
+  rm -rf *$2*
   wget $1
   extract_tar $2
 }
