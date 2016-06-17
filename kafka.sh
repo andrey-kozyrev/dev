@@ -1,6 +1,7 @@
 #!/bin/bash
 
-source init.sh $1
+. defs.sh
+./init.sh
 
 BLD=2.11
 VER=0.10.0.0

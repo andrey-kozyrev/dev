@@ -1,5 +1,8 @@
 #!/bin/bash
 
+export DEV=${1:-`pwd`}
+export USR=$DEV/usr
+
 delete_link() {
   if [ -h $1 ]
     then

@@ -1,6 +1,7 @@
 #!/bin/bash
 
-source init.sh $1
+. defs.sh
+./init.sh
 
 VER=3.5
 

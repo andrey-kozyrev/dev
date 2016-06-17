@@ -1,5 +1,7 @@
 #!/bin/bash
-. init.sh $1
+
+. defs.sh
+./init.sh
 
 VER=0.13.11
 
