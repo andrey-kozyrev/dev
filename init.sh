@@ -15,4 +15,5 @@ if [ ! -f $USR/.env ]
     echo "export BEEP=/usr/share/sounds/KDE-K3B-Finish-Success.ogg" >> $USR/.env
 fi
 
+source funcs.sh
 

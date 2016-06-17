@@ -1,36 +1,31 @@
 #!/bin/bash
-. init.sh $1
+
+source init.sh $1
 
 VER=8u92
 BUILD=b14
 
 pushd $USR/opt
+wget --no-check-certificate --no-cookies --header 'Cookie: oraclelicense=accept-securebackup-cookie' http://download.oracle.com/otn-pub/java/jdk/$VER-$BUILD/jdk-$VER-linux-x64.tar.gz
+extract_tar jdk
 
-wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/$VER-$BUILD/jdk-$VER-linux-x64.tar.gz
-tar -xf jdk*
-rm *.tar.gz
+link_lib jdk
 
-cd $USR/lib
-ln -s ../opt/`ls ../opt | grep jdk` java
+link_bin jdk java
+link_bin jdk javac
+link_bin jdk jar
+link_bin jdk jarsigner
+link_bin jdk javadoc
+link_bin jdk javah
+link_bin jdk javaws
+link_bin jdk jcmd
+link_bin jdk jconsole
+link_bin jdk jcontrol
+link_bin jdk jvisualvm
+link_bin jdk keytool
 
-cd $USR/bin
-ln -s ../lib/java/bin/java java
-ln -s ../lib/java/bin/javac javac
-ln -s ../lib/java/bin/jar jar
-ln -s ../lib/java/bin/jarsigner jarsigner
-ln -s ../lib/java/bin/javadoc javadoc
-ln -s ../lib/java/bin/javah javah
-ln -s ../lib/java/bin/javaws javaws
-ln -s ../lib/java/bin/jcmd jcmd
-ln -s ../lib/java/bin/jconsole jconsole
-ln -s ../lib/java/bin/jcontrol jcontrol
-ln -s ../lib/java/bin/jvisualvm jvisualvm
-ln -s ../lib/java/bin/keytool keytool
-
-cd $USR
-
-echo "export JAVA_HOME=$USR/lib/java" >> .env
-echo 'export JAVA_OPTS="-Xms2g -Xmx4g -Djava.net.preferIPv4Stack=true -Dfile.encoding=UTF8"' >> .env
+update_env JAVA_HOME '$USR/lib/java'
+update_env JAVA_OPTS '"-Xms2g -Xmx4g"'
 
 popd
 

@@ -5,19 +5,15 @@ VER=3.3.9
 
 pushd $USR/opt
 
-wget https://archive.apache.org/dist/maven/maven-3/$VER/binaries/apache-maven-$VER-bin.tar.gz
-tar -xf apache-maven*
-rm *.tar.gz
+fetch_tar https://archive.apache.org/dist/maven/maven-3/$VER/binaries/apache-maven-$VER-bin.tar.gz maven
 
-cd $USR/lib
-ln -s ../opt/`ls ../opt | grep apache-maven` maven
+link_lib maven
 
-cd $USR/bin
-ln -s ../lib/maven/bin/mvn mvn
+link_bin maven mvn
 
-echo "export M2_HOME=$USR/lib/maven" >> .env
-echo "export M2=$USR/lib/maven/bin" >> .env
-echo 'export MAVEN_OPTS="-Xms2g -Xmx2g"' >> .env
+update_env M2_HOME '$USR/lib/maven'
+update_env M2 '$USR/lib/maven/bin'
+update_env MAVEN_OPTS '"-Xms2g -Xmx2g"'
 
 popd
 

@@ -5,20 +5,16 @@ VER=2.11.8
 
 pushd $USR/opt
 
-wget http://downloads.lightbend.com/scala/$VER/scala-$VER.tgz
-tar -xf scala*
-rm *.tgz
+fetch_tar http://downloads.lightbend.com/scala/$VER/scala-$VER.tgz scala
 
-cd $USR/lib
-ln -s ../opt/`ls ../opt | grep scala` scala
+link_lib scala
 
-cd $USR/bin
-ln -s ../lib/scala/bin/scala scala
-ln -s ../lib/scala/bin/scalac scalac
-ln -s ../lib/scala/bin/scaladoc scaladoc
-ln -s ../lib/scala/bin/scalap scalap
+link_bin scala scala
+link_bin scala scalac
+link_bin scala scaladoc
+link_bin scala scalap
 
-echo "export SCALA_HOME=$USR/lib/scala" >> $USR/.env
+update_env SCALA_HOME '$USR/lib/scala'
 
 popd
 
