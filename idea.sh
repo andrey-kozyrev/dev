@@ -3,7 +3,7 @@
 . defs.sh
 ./init.sh
 
-VER=2016.1.3
+VER=2016.2
 
 pushd $USR/opt
 
