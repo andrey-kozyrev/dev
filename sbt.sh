@@ -14,7 +14,7 @@ link_lib sbt
 link_bin sbt sbt
 
 update_env SBT_HOME '$USR/lib/sbt'
-update_env SBT_OPTS '"-Xms2g -Xmx2g -XX:MaxPermSize=512M -XX:+CMSClassUnloadingEnabled -XX:+UseConcMarkSweepGC"'
+update_env SBT_OPTS '"-Xms2g -Xmx2g -XX:+CMSClassUnloadingEnabled -XX:+UseConcMarkSweepGC"'
 
 popd
 
