@@ -3,7 +3,7 @@
 . defs.sh
 ./init.sh
 
-VER=8u92
+VER=8u102
 BUILD=b14
 
 pushd $USR/opt

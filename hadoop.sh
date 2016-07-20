@@ -20,7 +20,5 @@ update_env HADOOP_HOME '$USR/lib/hadoop'
 update_env HADOOP_LIBEXEC_DIR '$HADOOP_HOME/libexec'
 update_env HADOOP_CONF_DIR '$HADOOP_HOME/etc/hadoop'
 
-source .env
-
 popd
 

@@ -12,15 +12,15 @@ delete_link() {
 
 fetch_tar() {
   cd $USR/opt
-  rm -rf *$2*
+  rm -rf $2*
   wget $1
   extract_tar $2
 }
 
 extract_tar() {
   cd $USR/opt
-  tar -xf *$1*
-  rm *$1* 2>/dev/null
+  tar -xf $1*
+  rm $1* 2>/dev/null
 }
 
 link_lib() {
