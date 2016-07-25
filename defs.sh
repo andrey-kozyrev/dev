@@ -32,7 +32,7 @@ link_lib() {
 link_bin() {
   cd $USR/bin
   delete_link $2
-  ln -s ../lib/$1/bin/$2 $2
+  ln -s ../lib/$1/bin/$2* $2
 }
 
 update_env() {
