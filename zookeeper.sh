@@ -21,7 +21,5 @@ update_env ZOOBINDIR '$ZOOKEEPER_HOME/bin'
 sed -i "/ZOOBIN=/d" $USR/lib/zookeeper/bin/zkCli.sh
 sed -i "/ZOOBINDIR=/d" $USR/lib/zookeeper/bin/zkCli.sh
 
-source .env
-
 popd
 

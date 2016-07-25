@@ -17,7 +17,5 @@ link_bin cassandra cqlsh
 update_env CASSANDRA_HOME '$USR/lib/cassandra'
 update_env CASSANDRA_INCLUDE '$USR/lib/cassandra/bin/cassandra.in.sh'
 
-source .env
-
 popd
 

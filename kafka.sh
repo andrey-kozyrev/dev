@@ -14,7 +14,5 @@ link_lib kafka
 
 update_env KAFKA_HOME '$USR/lib/kafka'
 
-source .env
-
 popd
 
