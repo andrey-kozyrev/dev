@@ -12,15 +12,15 @@ delete_link() {
 
 fetch_tar() {
   cd $USR/opt
-  rm -rf $2*
-  wget $1
-  extract_tar $2
+  rm -rf $2.tar.gz
+  wget $1 -O $2.tar.gz
+  extract_tar $2.tar.gz
 }
 
 extract_tar() {
   cd $USR/opt
-  tar -xf $1*
-  rm $1* 2>/dev/null
+  tar -xf $1
+  rm $1 2>/dev/null
 }
 
 link_lib() {
@@ -32,12 +32,12 @@ link_lib() {
 link_bin() {
   cd $USR/bin
   delete_link $2
-  ln -s ../lib/$1/bin/$2* $2
+  ln -s ../lib/$1/bin/$2 $2
 }
 
 update_env() {
   cd $USR
-  sed -i "/$1/d" .env
+  sed -i '' "/$1/d" .env
   echo "export $1=$2" >> .env
 }
 

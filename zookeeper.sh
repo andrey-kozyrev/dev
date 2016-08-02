@@ -18,8 +18,8 @@ update_env ZOOKEEPER_HOME '$USR/lib/zookeeper'
 update_env ZOOCFGDIR '$ZOOKEEPER_HOME/conf'
 update_env ZOOBINDIR '$ZOOKEEPER_HOME/bin'
 
-sed -i "/ZOOBIN=/d" $USR/lib/zookeeper/bin/zkCli.sh
-sed -i "/ZOOBINDIR=/d" $USR/lib/zookeeper/bin/zkCli.sh
+sed -i '' "/ZOOBIN=/d" $USR/lib/zookeeper/bin/zkCli.sh
+sed -i '' "/ZOOBINDIR=/d" $USR/lib/zookeeper/bin/zkCli.sh
 
 popd
 

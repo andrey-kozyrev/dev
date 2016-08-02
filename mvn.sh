@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. defs.sh
+source defs.sh
 ./init.sh
 
 VER=3.3.9
@@ -13,8 +13,8 @@ link_lib maven
 
 link_bin maven mvn
 
-update_env M2_HOME '$USR/lib/maven'
 update_env M2 '$USR/lib/maven/bin'
+update_env M2_HOME '$USR/lib/maven'
 update_env MAVEN_OPTS '"-Xms2g -Xmx2g"'
 
 popd
