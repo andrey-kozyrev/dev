@@ -12,8 +12,9 @@ fetch_tar https://services.gradle.org/distributions/gradle-$VER-bin.zip
 link_lib gradle
 
 link_bin gradle gradle
+link_bin gradle gradlew
 
 update_env GRADLE_HOME '$USR/lib/gradle'
-
+update_env GRADLE_OPTS '-Xmx2048m'
+		
 popd
-
