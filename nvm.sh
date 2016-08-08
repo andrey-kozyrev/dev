@@ -3,7 +3,7 @@
 . defs.sh
 ./init.sh
 
-mkdir ~/.nvm
+mkdir -p ~/.nvm
 
 VER=v0.31.4
 
