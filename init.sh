@@ -2,7 +2,7 @@
 
 echo "DEV=$DEV"
 
-mkdir -p $USR/src $USR/opt $USR/lib $USR/bin
+mkdir -p $USR/tmp $USR/src $USR/opt $USR/lib $USR/bin
 
 if [ ! -f $USR/.env ]
   then
