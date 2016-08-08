@@ -37,12 +37,12 @@ link_bin() {
 
 update_env() {
   cd $USR
-  sed -i '' "/$1/d" .env
+  sed -i '' "\,$1,d" .env
   echo "export $1=$2" >> .env
 }
 
 update_src() {
   cd $USR
-  sed -i '' "/$1/d" .env
+  sed -i '' '\,$1,d' .env
   echo "source $1" >> .env
 }
