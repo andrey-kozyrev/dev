@@ -41,3 +41,8 @@ update_env() {
   echo "export $1=$2" >> .env
 }
 
+update_src() {
+  cd $USR
+  sed -i '' "/$1/d" .env
+  echo "source $1" >> .env
+}
