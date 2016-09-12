@@ -3,7 +3,7 @@
 . defs.sh
 ./init.sh
 
-VER=3.5
+VER=2.1.13
 
 pushd $USR/opt
 
@@ -15,7 +15,8 @@ link_bin cassandra nodetool
 link_bin cassandra cqlsh
 
 update_env CASSANDRA_HOME '$USR/lib/cassandra'
-update_env CASSANDRA_INCLUDE '$USR/lib/cassandra/bin/cassandra.in.sh'
+update_env CASSANDRA_CONF '$CASSANDRA_HOME/conf'
+update_env CASSANDRA_INCLUDE '$CASSANDRA_HOME/bin/cassandra.in.sh'
 
 popd
 

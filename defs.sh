@@ -26,7 +26,7 @@ extract_tar() {
 link_lib() {
   cd $USR/lib
   delete_link $1
-  ln -s ../opt/`ls ../opt | grep $1` $1
+  ln -s ../opt/`ls ../opt/ | grep -i $1 | grep $VER` $1
 }
 
 link_bin() {
